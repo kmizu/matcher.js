@@ -89,3 +89,4 @@ var evl2 = match(
     [_,function(e){ return e;}]
     );
 console.log(evl2({op:"+",left:1,right:{op:"*",left:2,right:3}}));
+module.exports=match
