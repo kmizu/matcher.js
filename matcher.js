@@ -1,12 +1,14 @@
 function _(e) {
   return new _P(e);
 }
-function _P(e) {
-  this.e = e;
+class _P {
+  constructor(e) {
+    this.e = e;
+  }
 }
 
 function match() {
-  function ts(o) {
+  const ts = (o) => {
     if(o instanceof _P) {
       return '_("'+o.e+'")';
     }
@@ -26,8 +28,8 @@ function match() {
     }
     return JSON.stringify(o);
   }
-  var t = "   throw ('cannot match '+e);\n"
-    var str = "var f = function(e) {\n";
+  let = "   throw ('cannot match '+e);\n";
+  let str = "var f = function(e) {\n";
 
   for(var i = 0; i < arguments.length; i++) {
     var a = arguments[i];
@@ -79,14 +81,14 @@ function match() {
   return f;
 }
 
-var evl2 = match(
-    [{op:"+",left:_("l"),right:_("r")}, function(e) {
-      return evl2(e.l) + evl2(e.r);
-    }],
-    [{op:"*",left:_("l"),right:_("r")}, function(e) {
-      return evl2(e.l) * evl2(e.r);
-    }],
-    [_,function(e){ return e;}]
+let evl2 = match(
+  [{op:"+",left:_("l"),right:_("r")}, function(e) {
+    return evl2(e.l) + evl2(e.r);
+  }],
+  [{op:"*",left:_("l"),right:_("r")}, function(e) {
+    return evl2(e.l) * evl2(e.r);
+  }],
+  [_,function(e){ return e;}]
     );
 console.log(evl2({op:"+",left:1,right:{op:"*",left:2,right:3}}));
 module.exports=match
