@@ -1,0 +1,26 @@
+{
+  "name": "matcher.js",
+  "version": "0.0.1",
+  "description": "A pattern matching library in ES2015",
+  "main": "matcher.js",
+  "scripts": {
+    "test": "ava -v"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kmizu/matcher.js.git"
+  },
+  "keywords": [
+    "pattern"
+  ],
+  "author": "Kota Mizushima <mizukota@gmail.com> (https://github.com/kmizu)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kmizu/matcher.js/issues"
+  },
+  "homepage": "https://github.com/kmizu/matcher.js",
+  "devDependencies": {
+    "babelify": "^7.3.0",
+    "babel-preset-es2015": "^6.9.0"
+  }
+}
